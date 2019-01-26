@@ -10,7 +10,7 @@ var showChoiceBtn = document.getElementById('showChoise'),
 function tempChoice() {
     for (var i = 0; i < inputRadioCollection.length; i++) {
         inputRadioCollection[i].addEventListener('change', function(){
-            tempChoiceOutput.innerHTML = `You want to choose: <b>${this.value}</b>`;
+            tempChoiceOutput.innerHTML = `You want to choose: <b>${this.nextElementSibling.innerHTML}</b>`;
         });
     }
 }
@@ -22,7 +22,7 @@ tempChoice()
 showChoiceBtn.addEventListener('click', function() {
     for(var i = 0; i < inputRadioCollection.length; i++) {
         if (inputRadioCollection[i].checked) {
-            alert(inputRadioCollection[i].value);
+            alert(`You have been chosen: ${inputRadioCollection[i].nextElementSibling.innerHTML}`);
             break;
         }
     }
